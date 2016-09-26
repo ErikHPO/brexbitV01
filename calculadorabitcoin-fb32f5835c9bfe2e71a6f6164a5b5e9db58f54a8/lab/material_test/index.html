@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+    <title>Angular Material LAB</title>
+  </head>
+  <body ng-controller="MaterialUsers">
+
+    <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+      <md-toolbar layout="row" class="md-whiteframe-z1">
+        <h1>Angular Material - Starter App</h1>
+      </md-toolbar>
+      <md-content flex id="content">
+        <input type="text" name="name" value="" ng-model="saulera">
+
+        {{saulera}}
+        </md-content>
+    </div>
+  </body>
+
+    <script src="./bower_components/angular/angular.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-animate/angular-animate.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-aria/angular-aria.js" type="text/javascript" ></script>
+    <script src="./bower_components/angular-material/angular-material.js" type="text/javascript" ></script>
+    <script src="main-module.js" type="text/javascript" ></script>
+
+</html>

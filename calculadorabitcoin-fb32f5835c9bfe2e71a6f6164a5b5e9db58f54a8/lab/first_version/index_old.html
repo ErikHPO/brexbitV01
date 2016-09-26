@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="calcbtc">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculadora Bitcoin</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body ng-controller="mbCtrl">
+  <div id="pagewrap">
+    <div class="header">
+      <h1>Calculadora Bitcoin </h1>
+    </div>
+      <div id="currencytable" class="block">
+        <h3>Tabela Referência Block Chain </h3>
+          <table border="1">
+            <tr ng-repeat="(key,value) in blockchain">
+              <td>
+                {{$index}}
+              </td>
+              <td>
+                {{value.symbol}}
+              </td>
+              <td>
+                {{key}}
+              </td>
+              <td>
+                {{value.last}}
+              </td>
+              <td>
+                {{value.buy}}
+              </td>
+              <td>
+                {{value.sell}}
+              </td>
+            </tr>
+          </table>
+      </div>
+    <div>
+
+      <div class="priceRef">
+  <label class="textcalc">Preço do Bitcoin em BRL : {{btctoyou}}</label>  <input class="inputcalc" type="text" name="brlrefname" value="" ng-model="brlref" ng-required="number">
+      </div>
+
+      <div class="valueRef">
+        <label class="textcalc">Valor BRL : </label>
+        <input class="inputcalc" type="text" name="brlname" value="" ng-model="brl" ng-required="number">
+        <label class="textcalc">Valor Bitcoin : </label>
+        <input class="inputcalc" type="text" name="btcname" value="" ng-model="bitcoin" required="number">
+      </div>
+    </div>
+
+    <div class="">
+      <table>
+        <tr>
+          <td>
+            <span class="labelPrice"> BRL : </span>
+          </td>
+          <td>
+            <span class="price"> {{ brlref * bitcoin | number : 2}} </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="labelPrice">Bitcoin :</span>
+          </td>
+          <td>
+            <span class="price"> {{ brl / brlref | number : 8 }} </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>Esta página é mantida por Saulo Campos sobre licensa <a href="http://www.gnu.org/licenses/gpl-3.0.en.html">GPL</a> </p>
+      <p>
+        Repositório : <a href="https://github.com/saulocamposi/calculadorabitcoin">https://github.com/saulocamposi/calculadorabitcoin</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" charset="utf-8"></script>
+  <script src="value.js"></script>
+
+</body>
+
+</html>
